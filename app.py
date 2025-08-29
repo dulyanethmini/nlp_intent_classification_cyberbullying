@@ -7,20 +7,20 @@ from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.manifold import TSNE
 from src.data_prep import preprocess
 
-# -----------------------------
-# Page Config
-# -----------------------------
+
+# Page Configuring 
+
 st.set_page_config(page_title="Cyberbullying Detection", layout="wide")
 st.title("📊 Cyberbullying Detection App")
 
-# -----------------------------
-# Load trained pipeline
-# -----------------------------
+
+# Loading  trained pipeline
+
 vectorizer, model = joblib.load("models/cyberbullying_pipeline.pkl")
 
-# -----------------------------
+
 # Single Tweet Prediction
-# -----------------------------
+
 st.header("🔮 Predict a Tweet")
 tweet = st.text_area("Enter a tweet here:")
 
@@ -40,9 +40,9 @@ if st.button("Check Prediction"):
         except Exception as e:
             st.error(f"Error predicting tweet: {e}")
 
-# -----------------------------
+
 # Model Performance
-# -----------------------------
+
 st.header("📈 Model Performance")
 try:
     df = preprocess()
@@ -69,9 +69,9 @@ try:
 except Exception as e:
     st.error(f"Error generating model performance: {e}")
 
-# -----------------------------
+
 # t-SNE Embedding Visualization
-# -----------------------------
+
 st.header("🌀 t-SNE Visualization of TF-IDF Features")
 try:
     sample_df = df.sample(min(500, len(df)), random_state=42)
@@ -102,6 +102,7 @@ try:
 
 except Exception as e:
     st.error(f"Error generating t-SNE visualization: {e}")
+
 
 
 
