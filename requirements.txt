@@ -1,0 +1,22 @@
+# Core scientific stack
+numpy
+pandas
+scikit-learn
+
+# NLP tools
+nltk
+spacy
+textblob
+
+# Deep learning (optional but useful)
+torch
+transformers
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Dashboard / web app
+flask
+streamlit
